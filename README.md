@@ -1,13 +1,27 @@
 # Go Currency Converter
 
-Ein einfacher Kommandozeilen-Währungsrechner geschrieben in Go, der Live-Wechselkurse über die Open Exchange Rates API abruft.
+Ein moderner Kommandozeilen-Währungsrechner (TUI) geschrieben in Go, der Live-Wechselkurse über die Open Exchange Rates API abruft und ein interaktives Formular über das Charm Bracelet `huh`-Paket bereitstellt.
 
 ## Projektstruktur
 
 * **`api.go`**: Zuständig für die Kommunikation mit der Open Exchange Rates API und das Laden der JSON-Daten.
 * **`converter.go`**: Enthält die mathematische Logik zur Umrechnung der Währungen auf Basis von USD.
-* **`main.go`**: Die Hauptdatei mit einer interaktiven CLI-Schleife (`bufio`) für die Benutzereingabe.
+* **`main.go`**: Die Hauptdatei, die ein interaktives TUI-Formular (`github.com/charmbracelet/huh`) für die Benutzereingabe bereitstellt.
 * **`go.mod`**: Definiert das Go-Modul (`currency-converter`).
+
+## Verwendete Pakete
+
+* `net/http`: Für HTTP-Anfragen an die Währungs-API.
+* `encoding/json`: Zum Parsen und Verarbeiten der API-Daten.
+* `github.com/charmbracelet/huh`: Für die interaktive TUI-Benutzeroberfläche im Terminal.
+
+## Unterstützte Währungen
+
+Die Anwendung unterstützt standardmäßig folgende Hauptwährungen über das Auswahlmenü:
+* **USD** (US Dollar)
+* **EUR** (Euro)
+* **GBP** (Britisches Pfund)
+* **JPY** (Japanischer Yen)
 
 ## Voraussetzungen
 
@@ -18,18 +32,6 @@ Ein einfacher Kommandozeilen-Währungsrechner geschrieben in Go, der Live-Wechse
 
 1. Klone oder öffne das Projekt in deinem Terminal im Projektverzeichnis.
 
-2. Setze deine API-ID als Umgebungsvariable (`OER_APP_ID`):
-
-   * **PowerShell (Windows):**
-     ```powershell
-     $env:OER_APP_ID="DEINE_API_ID_HIER"
-     ```
-
-   * **Bash / Linux / macOS:**
-     ```bash
-     export OER_APP_ID="DEINE_API_ID_HIER"
-     ```
-
-3. Starte das Programm:
+2. Installiere das TUI-Paket von Charm Bracelet:
    ```bash
-   go run main.go api.go converter.go
+   go get [github.com/charmbracelet/huh](https://github.com/charmbracelet/huh)

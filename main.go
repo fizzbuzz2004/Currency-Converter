@@ -14,7 +14,7 @@ func main() {
 	if err != nil {
 		log.Fatalf("Fehler beim Laden der Kurse: %v", err)
 	}
-	fmt.Println("Kurse erfolgreich geladen!\n")
+	fmt.Println("Kurse erfolgreich geladen!")
 
 	var amountStr string
 	var from string
