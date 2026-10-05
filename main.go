@@ -33,7 +33,7 @@ func main() {
 
 		amount, err := strconv.ParseFloat(amountInput, 64)
 		if err != nil {
-			fmt.Println("❌ Ungültiger Betrag. Bitte gib eine Zahl ein.\n")
+			fmt.Println("❌ Ungültiger Betrag. Bitte gib eine Zahl ein.")
 			continue
 		}
 
